@@ -8,13 +8,14 @@ DATE=$(shell date)
 BUILDDIR=build
 
 deploy: clean
-	git checkout gh-pages
-	-cp build/* .
-	-git add *.html
-	-git commit -m 'Automatic build commit on $(DATE).'
-	git checkout ${CURRENT_BRANCH}
+	ghp-import build/
 	git push
+	#git checkout gh-pages
+	#-cp build/* .
+	#-git add *.html
+	#-git commit -m 'Automatic build commit on $(DATE).'
+	#git checkout ${CURRENT_BRANCH}
+	#git push
 
 clean: 
 	echo "Clean, I think"
-
