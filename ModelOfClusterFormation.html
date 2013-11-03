@@ -1,31 +1,9 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="chrome=1" />
-
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-<title>ModelOfClusterFormation slides</title>
-
-<!-- General and theme style sheets -->
-<link rel="stylesheet" href="reveal.js/css/reveal.css">
-<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
-
-<!-- For syntax highlighting -->
-<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
-
-<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-<script>
-document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-</script>
-
-<!--[if lt IE 9]>
-<script src="reveal.js/lib/js/html5shiv.js"></script>
-<![endif]-->
+<title>ModelOfClusterFormation</title>
 
 <style type="text/css">
     .clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0;}
@@ -1683,90 +1661,48 @@ h1:hover .anchor-link,h2:hover .anchor-link,h3:hover .anchor-link,h4:hover .anch
 
 <style type="text/css">
 /* Overrides of notebook CSS for static HTML export */
-html {
-  overflow-y: auto;
+body {
+  overflow: visible;
+  padding: 8px;
 }
-.reveal {
-  font-size: 20px;
+.input_area {
+  padding: 0.2em;
 }
-.reveal pre {
-  width: 95%;
-  padding: 0.4em;
+
+pre {
+  padding: 0.2em;
+  border: none;
   margin: 0px;
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-}
-.reveal section img {
-  border: 0px solid black;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-}
-.reveal .slides {
-  text-align: left;
-}
-.reveal.fade {
-  opacity: 1;
-}
-.reveal .progress {
-  position: static;
-}
-div.input_area {
-  padding: 0.06em;
-}
-div.code_cell {
-  background-color: transparent;
-}
-div.prompt {
-  width: 11ex;
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-  text-align: right;
-}
-div.output_area pre {
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-}
-div.output_prompt {
-  /* 5px right shift to account for margin in parent container */
-  margin: 5px 5px 0 0;
-}
-.rendered_html p {
-  text-align: inherit;
+  font-size: 13px;
 }
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
 <link rel="stylesheet" href="custom.css">
 
-</head>
-
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-<style type="text/css">
-//div.output_wrapper {
-//  margin-top: 0px;
-//}
-.input_hidden {
-  display: none;
-//  margin-top: 5px;
+<script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
 }
-</style>
-
-<script>
-$(document).ready(function(){
-  $(".output_wrapper").click(function(){
-      $(this).prev('.input_hidden').slideToggle();
-  });
-})
+init_mathjax();
 </script>
+</head>
 <body>
-<div class="reveal">
-<div class="slides">
-<div style=display:none>
-    
+
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="there-are-no-starless-massive-proto-clusters-in-the-first-quadrant-of-the-galaxy">There are No Starless Massive Proto-clusters in the First Quadrant of the Galaxy</h1>
 <p><a href="http://adsabs.harvard.edu/abs/2012ApJ...758L..29G&gt;">This paper</a> used the BGPS and related surveys to find all of the massive proto-cluster candidates in the Northern Galactic plane.</p>
@@ -1784,10 +1720,7 @@ pip install https://github.com/keflavich/kdist/archive/master.zip
 pip install https://github.com/keflavich/imf/archive/master.zip
 pip install https://github.com/keflavich/dust_emissivity/archive/master.zip</code></pre>
 </div>
-    </div><div style=display:none>
-    
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[1]:
@@ -1804,12 +1737,7 @@ In&nbsp;[1]:
 </div>
 
 </div>
-
-</div>
-    </div><div style=display:none>
-    
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[2]:
@@ -1828,12 +1756,7 @@ In&nbsp;[2]:
 </div>
 
 </div>
-
-</div>
-    </div><div style=display:none>
-    
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[3]:
@@ -1854,12 +1777,7 @@ In&nbsp;[3]:
 </div>
 
 </div>
-
-</div>
-    </div><div style=display:none>
-    
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[4]:
@@ -1869,8 +1787,6 @@ In&nbsp;[4]:
 </pre></div>
 
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -1890,10 +1806,7 @@ Downloading https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/NGC_3603b.
 </div>
 
 </div>
-    </div><div style=display:none>
-    
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[5]:
@@ -1907,16 +1820,10 @@ In&nbsp;[5]:
 </div>
 
 </div>
-
-</div>
-    </div></section>
-    </section><section>
-    <section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="why-are-high-mass-star-clusters-important">Why are (high-mass) star clusters important?</h2>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[6]:
@@ -1926,8 +1833,6 @@ In&nbsp;[6]:
 </pre></div>
 
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -5859,7 +5764,7 @@ nkUt0ZRl1LZP5SGYBCCBtHYUvJucWpdPaLklmNVEzmQVAHzXTtpXBJ4ogzpdYy3vTiLfif/Z
 </div>
 </div>
 
-</div></section><section>
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>Only locations in which a (probably coeval) IMF is fully sampled</li>
@@ -5873,19 +5778,15 @@ nkUt0ZRl1LZP5SGYBCCBtHYUvJucWpdPaLklmNVEzmQVAHzXTtpXBJ4ogzpdYy3vTiLfif/Z
 <li>low-mass analogs to Globular clusters</li>
 </ul></li>
 </ul>
-</div></section>
-    </section><section>
-    <section>
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="setting-up-an-experiment">Setting up an experiment</h2>
 <p>Starless cores (e.g. B68) and starless clumps (IRDCs) are well-studied and common. The former are thought to be precursors to single stars, while the latter are likely to be precursors to open clusters.</p>
 <p>Are there starless high-mass protoclusters, i.e. starless precursors to objects like NGC 3603, Westerlund 1, and The Arches? (these are known as &quot;Young Massive Clusters&quot; or YMCs)</p>
-</div></section><section>
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>New data - blind surveys of the Galactic plane - make this question approachable.</p>
-</div></section>
-    </section><section>
-    <section>
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="what-are-the-properties-of-a-proto-ymc">What are the properties of a proto-YMC?</h3>
 <p>(this section could do with some references, but <a href="http://adsabs.harvard.edu/abs/2010ARA%26A..48..431P">Portegies-Zwart 2010</a> contains most of the important details)</p>
@@ -5895,36 +5796,24 @@ nkUt0ZRl1LZP5SGYBCCBtHYUvJucWpdPaLklmNVEzmQVAHzXTtpXBJ4ogzpdYy3vTiLfif/Z
 <li>They are compact. This is a tricky point: YMCs are observed to be very compact, with <span class="math">\(r\sim1-5\)</span> pc. It is not possible to form a massive cluster with <span class="math">\(r\sim10\)</span> pc and have it shrink to <span class="math">\(r\sim5\)</span> pc over the lifetime of the most massive stars, yet the massive stars are preferentially seen twoards the center. Therefore, the clumps that formed the massive stars must also form compact.</li>
 <li>From #2 and #3 above, they must have high escape velocities. They can therefore have large linewidths and yet remain bound.</li>
 </ol>
-</div></section>
-    </section><section>
-    <section>
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="what-are-the-observable-properties-of-a-proto-ymc">What are the <em>observable</em> properties of a proto-YMC?</h3>
 <p>Assuming they go through a starless phase, they will have <span class="math">\(&gt;10^4 M_\odot\)</span> within a radius <span class="math">\(r&lt;2.5\)</span> pc.</p>
 <p>Existing surveys, specifically the <a href="irsa.ipac.caltech.edu/data/BOLOCAM_GPS/">BGPS</a>, <a href="atlasgal.mpifr-bonn.mpg.de">ATLASGAL</a>, and <a href="hi-gal.iaps.inaf.it/wiki/doku.php">Hi-Gal</a>, are complete to such objects throughout the Galactic plane.</p>
-</div></section>
-    </section><section>
-    <section>
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="a-simple-model-of-star-cluster-populations">A simple model of star cluster populations</h1>
-</div><div class="fragment">
-    
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>-Where can they form?</p>
 </div>
-    </div><div class="fragment">
-    
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>-What is their mass function?</p>
 </div>
-    </div><div class="fragment">
-    
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>-How do they progress from gas to stars?</p>
 </div>
-    </div></section>
-    </section><section>
-    <section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="where-do-star-clusters-form">Where do star clusters form?</h2>
 <p>Two simple models:</p>
@@ -5942,9 +5831,8 @@ nkUt0ZRl1LZP5SGYBCCBtHYUvJucWpdPaLklmNVEzmQVAHzXTtpXBJ4ogzpdYy3vTiLfif/Z
 </ul>
 <p><span class="math">\(p(r) = r_1 e^{-r}\)</span> for <span class="math">\(r&gt;r_1\)</span></p>
 <p><span class="math">\(p(r) = 0\)</span> for <span class="math">\(r&lt;r_1\)</span></p>
-</div></section><section>
+</div>
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[7]:
@@ -5964,8 +5852,6 @@ In&nbsp;[7]:
 </pre></div>
 
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -6548,14 +6434,11 @@ EEKIUf1/J2m+zE6ih64AAAAASUVORK5CYII=
 </div>
 </div>
 
-</div></section>
-    </section><section>
-    <section>
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Our sample is all within <span class="math">\(r&lt;8.5\)</span> kpc.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[8]:
@@ -6571,8 +6454,6 @@ In&nbsp;[8]:
 </pre></div>
 
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -7191,17 +7072,13 @@ VCK5EARBEATBqP4/sxfJg53JW8kAAAAASUVORK5CYII=
 </div>
 </div>
 
-</div></section>
-    </section><section>
-    <section>
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="what-is-their-mass-function">What is their mass function?</h2>
 <p>A Schecter function? Or a power-law?</p>
 <p>The intrinsic mass function: <span class="math">\[p(m) = A m^{-\beta} e^{-m/m_0} \]</span> where <span class="math">\(m_0\)</span> is a &quot;maximum mass&quot; above which the number of clusters exponentially drops off</p>
-</div><div style=display:none>
-    
+</div>
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[9]:
@@ -7214,12 +7091,7 @@ In&nbsp;[9]:
 </div>
 
 </div>
-
-</div>
-    </div><div style=display:none>
-    
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[10]:
@@ -7234,13 +7106,7 @@ In&nbsp;[10]:
 </div>
 
 </div>
-
-</div>
-    </div></section>
-    </section><section>
-    <section>
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[11]:
@@ -7258,8 +7124,6 @@ In&nbsp;[11]:
 </pre></div>
 
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -7793,15 +7657,11 @@ Ch8iIiLSqBQ+REREpFEpfIiIiEijUvgQERGRRqXwISIiIo1K4UNEREQalcKHiIiINCqFDxEREWlU
 </div>
 </div>
 
-</div></section>
-    </section><section>
-    <section>
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>However, we only examined clusters in the range <span class="math">\(m&gt;10^4\)</span></p>
-</div><div class="fragment">
-    
+</div>
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[12]:
@@ -7817,8 +7677,6 @@ In&nbsp;[12]:
 </pre></div>
 
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -8347,15 +8205,10 @@ ISIiIp3q/wNnpsFPhKZ7KAAAAABJRU5ErkJggg==
 </div>
 
 </div>
-    </div></section>
-    </section><section>
-    <section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Our sample provides very little constraint on the mass function.</p>
-</div><div class="fragment">
-    
+</div>
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[13]:
@@ -8374,8 +8227,6 @@ In&nbsp;[13]:
 </pre></div>
 
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -8942,13 +8793,9 @@ JB9CCCGECClJPoQQQggRUv8fR073osf6X20AAAAASUVORK5CYII=
 </div>
 
 </div>
-    </div></section>
-    </section><section>
-    <section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="how-do-the-massive-clusters-form">How do the massive clusters form?</h2>
-</div><div class="fragment">
-    
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>Either all their gas is in place at once
@@ -8957,8 +8804,6 @@ JB9CCCGECClJPoQQQggRUv8fR073osf6X20AAAAASUVORK5CYII=
 </ul></li>
 </ul>
 </div>
-    </div><div class="fragment">
-    
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>Or it isn't
@@ -8970,9 +8815,6 @@ JB9CCCGECClJPoQQQggRUv8fR073osf6X20AAAAASUVORK5CYII=
 </ul></li>
 </ul>
 </div>
-    </div></section>
-    </section><section>
-    <section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Start with the first model: We can constrain it.</p>
 <ul>
@@ -8980,36 +8822,28 @@ JB9CCCGECClJPoQQQggRUv8fR073osf6X20AAAAASUVORK5CYII=
 <li>Then, they form stars!</li>
 <li>Finally, the stars expel the gas</li>
 </ul>
-</div><div class="fragment">
-    
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The starry, gas-rich phase lasts at least until the first supernova if <span class="math">\(v_{esc} &gt; C_{II}\)</span> <a href="http://arxiv.org/abs/1208.3472">(Bressert, Ginsburg et al 2012)</a> or until the gas is consumed</p>
 <p>The first SN is at <span class="math">\(t&gt;3\)</span> Myr. The gas consumption timescale may be shorted.</p>
 </div>
-    </div></section>
-    </section><section>
-    <section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We measure an upper limit:</p>
 <p><span class="math">\(N_{starless}(M&gt;10^4) = 0\)</span></p>
 <p><span class="math">\(N_{starry}(M&gt;10^4) = 3\)</span> (conservatively) or <span class="math">\(18\)</span> (if you allow for 100% star formation efficiency)</p>
-</div></section><section>
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <a href="http://arxiv.org/abs/1302.2538">Urquhart et al 2013</a> ATLASGAL sample extends this to ~6 in the conservative case.</p>
 <ul>
 <li>By selecting on masers, that sample may be biased</li>
 <li>Contreras and Longmore working on the unbiased sample?</li>
 </ul>
-</div></section>
-    </section><section>
-    <section>
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So we &quot;measure&quot; <span class="math">\(N_{starless}/N_{starry}\)</span> = 0.</p>
 <p>Poisson statistics: <span class="math">\[\sigma_N = \frac{\sqrt{N_{starry}}}{N_{starry}} \approx 0.6 \]</span></p>
 <p>Or, a <span class="math">\(1-\sigma\)</span> limit <span class="math">\(N_{starless} &lt; 0.6\)</span></p>
-</div></section>
-    </section><section>
-    <section>
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Lifetime of the starless phase:</p>
 <p><span class="math">\[\frac{N_{starless}}{N_{starry}} = \frac{\tau_{starless}}{\tau_{starry}}\]</span></p>
@@ -9017,9 +8851,7 @@ JB9CCCGECClJPoQQQggRUv8fR073osf6X20AAAAASUVORK5CYII=
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Better statistics aren't warranted yet.</p>
-</div></section>
-    </section><section>
-    <section>
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="what-have-we-learned-about-the-formation-of-massive-clusters">What have we learned about the formation of massive clusters?</h2>
 <p>The proto-massive-cluster &quot;clumps&quot; of gas form massive stars rapidly <em>if</em> they exist at all.</p>
@@ -9034,15 +8866,12 @@ JB9CCCGECClJPoQQQggRUv8fR073osf6X20AAAAASUVORK5CYII=
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>&quot;The Brick&quot;, the ~<span class="math">\(10^5 M_\odot\)</span> cloud in the CMZ, may form a cluster by an entirely different mechanism.</p>
 <p>There is clearly environmental dependence for massive cluster formation.</p>
-</div></section>
-    </section><section>
-    <section>
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="computing-mass">Computing Mass</h1>
 <p>An aside on computing mass, which is important for completeness considerations and measuring the mass function.</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[14]:
@@ -9056,10 +8885,7 @@ In&nbsp;[14]:
 </div>
 
 </div>
-
-</div>
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[15]:
@@ -9072,8 +8898,6 @@ In&nbsp;[15]:
 </pre></div>
 
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -9094,16 +8918,12 @@ This will be used below.
 </div>
 </div>
 
-</div></section>
-    </section><section>
-    <section>
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="distances">Distances</h2>
 <p>Velocity is enough to give an upper limit on distance.</p>
-</div><div style=display:none>
-    
+</div>
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[16]:
@@ -9121,13 +8941,7 @@ In&nbsp;[16]:
 </div>
 
 </div>
-
-</div>
-    </div></section>
-    </section><section>
-    <section>
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[17]:
@@ -9145,8 +8959,6 @@ In&nbsp;[17]:
 </pre></div>
 
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -9830,10 +9642,8 @@ IYQQQggxof4HwqRk42u461wAAAAASUVORK5CYII=
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For a given velocity, we have an upper limit on the distance.</p>
 <p>We also have measurements of the velocities of all BGPS sources.</p>
-</div><div style=display:none>
-    
+</div>
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[18]:
@@ -9847,12 +9657,7 @@ In&nbsp;[18]:
 </div>
 
 </div>
-
-</div>
-    </div><div style=display:none>
-    
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[19]:
@@ -9880,16 +9685,10 @@ In&nbsp;[19]:
 </div>
 
 </div>
-
-</div>
-    </div></section>
-    </section><section>
-    <section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Using these maximum velocities, we can acquire a mass-limited sample, as long as we can later disambiguate which of the potentially massive sources are genuinely massive (and distant).</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[20]:
@@ -9912,8 +9711,6 @@ In&nbsp;[20]:
 </pre></div>
 
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -10699,12 +10496,11 @@ xCgmEAgEAoFAIBAIBILSQoxiAoFAIBAIBAKBQCAoLf8P55kfmle9KLUAAAAASUVORK5CYII=
 </div>
 </div>
 
-</div></section><section>
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>What is that excess at negative velocities? Is it anything interesting?</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[21]:
@@ -10730,8 +10526,6 @@ In&nbsp;[21]:
 </pre></div>
 
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -11497,15 +11291,11 @@ Aav5le6WF8uCAAAAAElFTkSuQmCC
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Those negative velocities mostly come from low-mass clumps in the outer galaxy; they're nothing special.</p>
-</div><div style=display:none>
-    
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Below this point is to build the slideshow:</p>
 </div>
-    </div><div style=display:none>
-    
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[22]:
@@ -11518,8 +11308,6 @@ In&nbsp;[22]:
 </pre></div>
 
 </div>
-</div>
-
 </div>
 
 <div class="output_wrapper">
@@ -11547,10 +11335,7 @@ Moved slides to build directory
 </div>
 
 </div>
-    </div><div style=display:none>
-    
 <div class="cell border-box-sizing code_cell vbox">
-<div class="input_hidden">
 <div class="input">
 <div class="prompt input_prompt">
 In&nbsp;[22]:
@@ -11563,73 +11348,5 @@ In&nbsp;[22]:
 </div>
 
 </div>
-
-</div>
-    </div>
-</div>
-</div>
-
-<script src="reveal.js/lib/js/head.min.js"></script>
-
-<script src="reveal.js/js/reveal.js"></script>
-
-<script>
-
-// Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
-Reveal.initialize({
-controls: true,
-progress: true,
-history: true,
-
-theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
-
-// Optional libraries used to extend on reveal.js
-dependencies: [
-{ src: "reveal.js/lib/js/classList.js", condition: function() { return !document.body.classList; } },
-{ src: "reveal.js/plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-{ src: "reveal.js/plugin/notes/notes.js", async: true, condition: function() { return !!document.body.classList; } }
-]
-});
-</script>
-
-<!-- MathJax configuration -->
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-    displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
-  },
-  displayAlign: 'left', // Change this to 'center' to center equations.
-  "HTML-CSS": {
-    styles: {'.MathJax_Display': {"margin": 0}}
-  }
-});
-</script>
-<!-- End of mathjax configuration -->
-
-<script>
-//  We wait for the onload function to load MathJax after the page is completely loaded.
-//  MathJax is loaded 1 unit of time after the page is ready.
-//  This hack prevent problems when you load multiple js files.
-
-window.onload = function () {
-  setTimeout(function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS_HTML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  },1)
-}
-</script>
-
-<script>
-Reveal.addEventListener( 'slidechanged', function( event ) {
-  window.scrollTo(0,0);
-  MathJax.Hub.Rerender(event.currentSlide);
-});
-</script>
-
 </body>
-
 </html>
