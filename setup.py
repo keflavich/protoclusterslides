@@ -82,8 +82,10 @@ class DeployNotes(Command):
             result1 = subprocess.Popen(['git','clone','git@github.com:hakimel/reveal.js.git','build/reveal.js'])
             result1.wait()
             shutil.rmtree('build/reveal.js/.git')
+
         result2 = subprocess.Popen(['ghp-import','build/'])
         result2.wait()
+
         result3 = subprocess.Popen(['git','push','origin','gh-pages'])
         result3.wait()
     
@@ -108,10 +110,11 @@ class RunNotes(Command):
         start_dir = os.path.abspath('.')
 
         for notebook in glob.glob('*.ipynb'):
-            os.chdir(os.path.dirname(notebook))
-            r = NotebookRunner(os.path.basename(notebook))
+            if os.path.dirname(notebook):
+                os.chdir(os.path.dirname(notebook))
+            r = NotebookRunner("./"+os.path.basename(notebook))
             r.run_notebook(skip_exceptions=True)
-            r.save_notebook(os.path.basename(notebook))
+            r.save_notebook("./"+os.path.basename(notebook))
             os.chdir(start_dir)
 
 
