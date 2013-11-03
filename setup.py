@@ -2,6 +2,11 @@
 
 import os
 import glob
+import shutil
+import tempfile
+import sys
+
+from IPython.nbconvert.nbconvertapp import NbConvertApp
 
 from setuptools import setup, Command
 import subprocess
@@ -19,13 +24,6 @@ class BuildNotes(Command):
 
     def run(self):
 
-        import os
-        import shutil
-        import tempfile
-
-        from IPython.nbconvert.nbconvertapp import NbConvertApp
-
-        import sys
         for arg in range(len(sys.argv[1:])):
             sys.argv.pop(-1)
 
@@ -46,6 +44,11 @@ class BuildNotes(Command):
             app.output_base = notebook.replace('.ipynb', '')
             app.start()
 
+            outfile = "build/{}.slides.html".format(app.output_base)
+            if os.path.exists(outfile):
+                os.remove(outfile)
+            shutil.move(app.output_base+".slides.html",outfile)
+
         # Now convert the lecture notes, problem sets, and practice problems to
         # HTML notebooks.
 
@@ -56,6 +59,11 @@ class BuildNotes(Command):
             app.notebooks = [notebook]
             app.output_base = notebook.replace('.ipynb', '')
             app.start()
+
+            outfile = "build/{}.html".format(app.output_base)
+            if os.path.exists(outfile):
+                os.remove(outfile)
+            shutil.move(app.output_base+".html",outfile)
 
 
 class DeployNotes(Command):
