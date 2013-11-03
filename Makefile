@@ -9,7 +9,7 @@ BUILDDIR=build
 
 deploy: clean
 	ghp-import build/
-	git push
+	git push origin gh-pages
 	#git checkout gh-pages
 	#-cp build/* .
 	#-git add *.html
